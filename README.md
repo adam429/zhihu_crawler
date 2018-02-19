@@ -25,24 +25,12 @@ config = {
 - answer_limit: Fetch first answer_limit answer for each questions
 - jobs: Number of concurrent jobs (Process)
 
-### Output
-
-![outut](demo/output.png)
-
-> Output directory (./output/)
-
-![index](demo/index.png)
-
-> Overview index csv file (index.csv)
-
-![question](demo/question.png)
-
-> Question detail csv file. Including all answers for the question.
 
 ### About me
 
 Adam429 Lee (adam429.lee@gmail.com). Looking for freelance tasks for data crawler and data annotation.
 
+---------------------------------------------------------
 
 # Zhihu Crawler (中文)
 
