@@ -150,7 +150,7 @@ def _csv(text):
 # Save fetched answer list to a file
 def save_answer(driver,question_id):
     data = parse_answer(driver)
-
+    #
     global config
     f=open(config['output']+question_id+".csv","w")
     f.write("\uFEFF")
@@ -284,7 +284,7 @@ def load_question_list(driver):
             soup = BeautifulSoup(driver.page_source,'lxml')
             item = soup.find('a',{'class':'TopicLink'})
             topic_id = _number(item.attrs.get("href"))
-
+            #
             # Part1 - Top Answers
             driver.get("https://www.zhihu.com/topic/{0}/top-answers".format(topic_id))
             scroll_down_all_equal(driver)
@@ -436,6 +436,31 @@ def check_incomplete():
     #
     for i in incomplete_list:
         os.remove(i)
+
+# Helper function 
+def download_img():
+    global config
+    #
+    if not os.path.exists(config["output"]+"img/"):
+        os.makedirs(config["output"]+"img/")
+    #
+    question_list = json.load(open(config["output"]+"question_list.json"))
+    img_list =[]
+    #
+    for i in question_list:
+        try:
+            file=open(config['output']+_number(i[0])+".csv","r")
+            content = file.read()
+            file.close()
+            img_list = img_list + re.findall('src="([^"]*)',content)
+        except FileNotFoundError:
+            log("File Missing {0}".format(i[0]))
+            pass
+    #
+    for i in img_list:
+        os.system("curl {0} > {1}".format(i,config["output"]+"img/"+re.sub('^([^/]*/+)*','',i)))            
+
+
 
 
 # Main program

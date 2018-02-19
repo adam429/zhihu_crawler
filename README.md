@@ -73,6 +73,11 @@ config = {
 
 > 问题详情文件，里面有该问题下的所有回答
 
+![question](demo/output_img.png)
+
+> 抓取回答中的图片
+
+
 ### 关于作者
 
 Adam429 Lee (adam429.lee@gmail.com). 专业承接各种数据爬虫和数据标注工作。
