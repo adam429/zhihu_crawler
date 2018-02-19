@@ -1,4 +1,4 @@
-# English
+# Zhihu Crawler (English)
 
 zhihu_crawler is yet another Zhihu crawler. Powered by Selenium and BeautifulSoup, it implements a multiple-process crawler with advanced features. 
 
@@ -44,7 +44,7 @@ config = {
 Adam429 Lee (adam429.lee@gmail.com). Looking for freelance tasks for data crawler and data annotation.
 
 
-# 中文
+# Zhihu Crawler (中文)
 
 zhihu_crawler是知乎的数据爬虫。通过使用Selenium和BeautifulSoup等库，实现了包含多线程的高级功能爬虫的功能。
 
